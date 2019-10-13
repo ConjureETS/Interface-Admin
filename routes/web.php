@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'InscriptionController@getInscription')->name('inscription');
+Route::post('/', 'InscriptionController@postInscription')->name('inscriptionSubmit');
 
 Auth::routes();
 

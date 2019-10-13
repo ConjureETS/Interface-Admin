@@ -116,6 +116,7 @@ return [
     'uploaded' => ':attribute a échoué à téléverser.',
     'url' => 'Le format de :attribute est invalide.',
     'uuid' => ':attribute doit être un UUID valide.',
+    'phone' => 'Le format du numéro de téléphone est invalide.',
 
     /*
     |--------------------------------------------------------------------------
