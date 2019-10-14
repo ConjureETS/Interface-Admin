@@ -19,7 +19,7 @@ class InscriptionMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $member;
+    private $member;
 
     public function __construct($member)
     {

@@ -9,14 +9,12 @@
 namespace App\Http\Controllers;
 
 use App\Mail\InscriptionMail;
-use App\Models\LaboratoryType;
 use Illuminate\Support\Facades\Mail;
 
 class MailController extends Controller
 {
     public function sendInscriptionMail($member)
     {
-        $laboratories = LaboratoryType::inscription()->get();
-        Mail::to($member->email)->send(new InscriptionMail($member, $laboratories));
+        Mail::to($member->email)->send(new InscriptionMail($member));
     }
 }

@@ -21,10 +21,15 @@
 </head>
 <body>
     <div id="app">
-
+        <header class="py-4">
+            <img src="{{ public_path('img/logo-conjure.png') }}" alt="Logo Conjure" />
+        </header>
         <main class="py-4">
             @yield('content')
         </main>
+        <footer class="py-4">
+
+        </footer>
     </div>
 </body>
 </html>

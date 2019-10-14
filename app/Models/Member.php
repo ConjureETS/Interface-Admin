@@ -54,6 +54,10 @@ class Member extends Model
         return $this->hasOne('App\Models\CommunicationMethod', "preferred_communication_method_id", 'id');
     }
 
+    public function user() {
+        return $this->hasOne('App\Models\User');
+    }
+
 
     /* ------------------------------------------------------------------------------------------------------- Static */
     public static function getSemesterLetter()

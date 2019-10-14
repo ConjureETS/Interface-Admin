@@ -11,9 +11,13 @@
 |
 */
 
-Route::get('/', 'InscriptionController@getInscription')->name('inscription');
-Route::post('/', 'InscriptionController@postInscription')->name('inscriptionSubmit');
+Route::group(['middleware' => ['guest']], function () {
+    Route::get('/', 'InscriptionController@getInscription')->name('inscription');
+    Route::post('/', 'InscriptionController@postInscription')->name('inscriptionSubmit');
+});
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/home', 'HomeController@index')->name('home');
+});
