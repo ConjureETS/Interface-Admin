@@ -47,16 +47,16 @@ class User extends Authenticatable
 
     public function getEmailAttribute()
     {
-        return $this->member->email;
+        return $this->member()->email;
     }
 
     public function getFirstNameAttribute()
     {
-        return $this->member->first_name;
+        return $this->member()->first_name;
     }
 
     public function getLastNameAttribute()
     {
-        return $this->member->last_name;
+        return $this->member()->last_name;
     }
 }
