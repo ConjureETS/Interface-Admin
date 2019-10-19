@@ -90,14 +90,14 @@
                             <label for="program" class="col-md-4 col-form-label text-md-right">{{ __('general.program') }}</label>
 
                             <div class="col-md-8">
-                                <select id="program" class="form-control @error('program') is-invalid @enderror" name="program" value="{{ old('program') }}" required autocomplete="program">
+                                <select id="program_id" class="form-control @error('program_id') is-invalid @enderror" name="program_id" required autocomplete="program_id">
                                     <option>{{ __('general.choose-option') }}</option>
                                     @foreach($programs as $program)
-                                        <option value="{{ $program->id }}">{{ $program->name }}</option>
+                                        <option value="{{ $program->id }}" {{ old('program_id') == $program->id ? "selected" : "" }}>{{ $program->name }}</option>
                                     @endforeach
                                 </select>
 
-                                @error('program')
+                                @error('program_id')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -109,14 +109,14 @@
                             <label for="communication_method" class="col-md-4 col-form-label text-md-right">{{ __('general.communication-method') }}</label>
 
                             <div class="col-md-8">
-                                <select id="communication_method" class="form-control @error('communication_method') is-invalid @enderror" name="communication_method" value="{{ old('communication_method') }}" required autocomplete="communication_method">
+                                <select id="communication_method_id" class="form-control @error('communication_method_id') is-invalid @enderror" name="communication_method_id" required autocomplete="communication_method_id">
                                     <option>{{ __('general.choose-option') }}</option>
                                     @foreach($communicationMethods as $communicationMethod)
-                                        <option value="{{ $communicationMethod->id }}">{{ $communicationMethod->name }}</option>
+                                        <option value="{{ $communicationMethod->id }}" {{ old('communication_method_id') == $communicationMethod->id ? "selected" : "" }}>{{ $communicationMethod->name }}</option>
                                     @endforeach
                                 </select>
 
-                                @error('communication_method')
+                                @error('communication_method_id')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

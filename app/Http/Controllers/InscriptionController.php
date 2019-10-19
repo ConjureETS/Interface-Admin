@@ -39,6 +39,8 @@ class InscriptionController extends Controller
 
         $member = $this->create($request->all());
 
+        (new MailController())->sendInscriptionMail($member);
+
         return view('inscription')->with([
             'member' => $member
         ]);
@@ -64,7 +66,7 @@ class InscriptionController extends Controller
             'email' => $data['email'],
             'universal_code' => $data['universal_code'],
             'start_semester' => Member::getSemesterLetter().date("Y"),
-            'activity' => Member::ACTIVITY[0],
+            'activity' => 1,
             'phone' => $data['phone'],
             'program_id' => $data['program_id']
         ]);

@@ -36,27 +36,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    protected $appends = [
-        'email', 'first_name', 'last_name'
-    ];
-
     public function member()
     {
         return $this->belongsTo("App\Models\Member");
-    }
-
-    public function getEmailAttribute()
-    {
-        return $this->member()->email;
-    }
-
-    public function getFirstNameAttribute()
-    {
-        return $this->member()->first_name;
-    }
-
-    public function getLastNameAttribute()
-    {
-        return $this->member()->last_name;
     }
 }

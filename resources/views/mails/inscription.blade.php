@@ -18,7 +18,7 @@
                     @endforeach
                 </ul>
                 <p>{{ __('mails.laboratory-deadline', ['deadline' => date("d-m-Y", strtotime("+3 weeks"))]) }}</p>
-                <p>{{ __('mails.laboratory-return-instruction') }}</p>
+                <p>{!! __('mails.laboratory-return-instruction') !!}</p>
             </div>
         </div>
     </div>
