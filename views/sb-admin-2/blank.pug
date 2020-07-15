@@ -1,19 +1,18 @@
 //- blank.pug
+extends ../../node_modules/pug-bootstrap/_bootstrap
+
 include pug_inc/mixins/mixins
 include pug_inc/mixins/cards
 include pug_inc/mixins/buttons
-include ../mixins
 
-doctype html
+append head
+    include pug_inc/meta
+    include pug_inc/link
 
-html
-    head
-        include pug_inc/meta
-        include pug_inc/link
+    include pug_inc/ga_tracking
 
-        include pug_inc/ga_tracking
-
-    body#page-top
+block body
+    #page-top
         #wrapper
             block sidebar
                 include pug_inc/sidebar
@@ -26,4 +25,5 @@ html
 
         include pug_inc/logout_modal
 
-        include pug_inc/scripts
+append scripts
+    include pug_inc/scripts

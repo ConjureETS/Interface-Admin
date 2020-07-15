@@ -1,1 +1,7 @@
 extends sb-admin-2/blank
+
+prepend sidebar
+    - const appName = 'Conjure Admin';
+
+block sidebar_menu_buttons
+    +menu_button("Membres", "fa-chalkboard-teacher", "/members")

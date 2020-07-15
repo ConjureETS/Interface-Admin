@@ -13,6 +13,8 @@ class App {
 		this.middleware();
 		this.routes();
 		this.expressApp.set('view engine', 'pug');
+		this.expressApp.use('/sb-admin-2/css', express.static(__dirname + '/../node_modules/startbootstrap-sb-admin-2/css'));
+		this.expressApp.use('/sb-admin-2/js', express.static(__dirname + '/../node_modules/startbootstrap-sb-admin-2/js'));
 	}
 
 	// Configure Express middleware.
