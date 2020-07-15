@@ -1,0 +1,32 @@
+li.nav-item.dropdown.no-arrow.mx-1
+    a#alertsDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+        i.fas.fa-bell.fa-fw
+        // Counter - Alerts
+        span.badge.badge-danger.badge-counter 3+
+
+    // Dropdown - Alerts
+    .dropdown-list.dropdown-menu.dropdown-menu-right.shadow.animated--grow-in(aria-labelledby='alertsDropdown')
+        h6.dropdown-header
+            | Alerts Center
+        a.dropdown-item.d-flex.align-items-center(href='#')
+            .mr-3
+                .icon-circle.bg-primary
+                    i.fas.fa-file-alt.text-white
+            div
+                .small.text-gray-500 December 12, 2019
+                span.font-weight-bold A new monthly report is ready to download!
+        a.dropdown-item.d-flex.align-items-center(href='#')
+            .mr-3
+                .icon-circle.bg-success
+                    i.fas.fa-donate.text-white
+            div
+                .small.text-gray-500 December 7, 2019
+                |             $290.29 has been deposited into your account!
+        a.dropdown-item.d-flex.align-items-center(href='#')
+            .mr-3
+                .icon-circle.bg-warning
+                    i.fas.fa-exclamation-triangle.text-white
+            div
+                .small.text-gray-500 December 2, 2019
+                |             Spending Alert: We&apos;ve noticed unusually high spending for your account.
+        a.dropdown-item.text-center.small.text-gray-500(href='#') Show All Alerts

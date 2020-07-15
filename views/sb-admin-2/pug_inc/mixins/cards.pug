@@ -1,0 +1,38 @@
+mixin basic_card(title)
+    .card.shadow.mb-4&attributes(attributes)
+        .card-header.py-3
+            h6.m-0.font-weight-bold.text-primary= title
+        .card-body
+            block
+
+mixin card_collapsable(id, title, expanded=true, message='')
+    .card.shadow.mb-4&attributes(attributes)
+        // Card Header - Accordion
+        a.d-block.card-header.py-3(class=(expanded ? '' : 'collapsed') href='#collapseCard' + id data-toggle='collapse' role='button' aria-expanded=expanded aria-controls='collapseCard' + id)
+            h6.m-0.font-weight-bold.text-primary= title
+                span.float-right.text-primary= message
+        // Card Content - Collapse
+        .collapse(class=(expanded ? 'show' : ''), id='collapseCard' + id)
+            .card-body
+                block
+
+mixin card_collapsable_message(id, title, expanded, message, bg_color, text_color)
+    .card.shadow.mb-4&attributes(attributes)
+        // Card Header - Accordion
+        a.d-block.card-header.py-3(class=(expanded ? '' : 'collapsed ') + bg_color href='#collapseCard' + id data-toggle='collapse' role='button' aria-expanded=expanded aria-controls='collapseCard' + id)
+            h6.m-0.font-weight-bold(class=text_color)= title
+                span.float-right(class=text_color)= message
+        // Card Content - Collapse
+        .collapse(class=(expanded ? 'show' : ''), id='collapseCard' + id)
+            .card-body
+                block
+
+mixin border_card_primary(title, value, icon)
+    .card.border-left-primary.shadow.h-100.py-2&attributes(attributes)
+        .card-body
+            .row.no-gutters.align-items-center
+                .col.mr-2
+                    .text-xs.font-weight-bold.text-primary.text-uppercase.mb-1= title
+                    .h5.mb-0.font-weight-bold.text-gray-800= value
+                .col-auto
+                    i.fas.fa-2x.text-gray-300(class=icon)

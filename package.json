@@ -1,0 +1,24 @@
+{
+	"name": "interface-admin",
+	"version": "0.1.0",
+	"main": "dist/server.js",
+	"scripts": {
+		"start": "node dist/server.js",
+		"test": "mocha --reporter spec --require ts-node/register 'test/**/*.ts' --exit",
+		"build": "tsc",
+		"coverage": "nyc npm run test",
+		"coverage:coveralls": "nyc --reporter=lcov --reporter=text-lcov npm run test | coveralls",
+		"build-start": "npm run build && npm start"
+	},
+	"license": "ISC",
+	"dependencies": {
+		"@types/node": "^14.0.23",
+		"chai": "^4.2.0",
+		"express": "^4.17.1",
+		"mocha": "^8.0.1",
+		"morgan": "^1.10.0",
+		"pug": "^3.0.0",
+		"pug-bootstrap": "0.0.16",
+		"typescript": "^3.9.6"
+	}
+}

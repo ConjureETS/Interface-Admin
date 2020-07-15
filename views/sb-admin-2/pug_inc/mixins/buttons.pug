@@ -1,0 +1,23 @@
+mixin a_primary(label, icon, href)
+    a.btn.btn-primary.btn-icon-split(href=href)&attributes(attributes)
+        span.icon.text-white-50
+            i.fas(class=icon)
+        span.text= label
+
+mixin button_primary(label, icon, id)
+    button.btn.btn-primary.btn-icon-split(id!=id)&attributes(attributes)
+        span.icon.text-white-50
+            i.fas(class=icon)
+        span.text= label
+
+mixin a_danger(label, icon, href)
+    a.btn.btn-danger.btn-icon-split(href=href)&attributes(attributes)
+        span.icon.text-white-50
+            i.fas(class=icon)
+        span.text= label
+
+mixin button_danger(label, icon, id)
+    button.btn.btn-danger.btn-icon-split(id!=id)&attributes(attributes)
+        span.icon.text-white-50
+            i.fas(class=icon)
+        span.text= label

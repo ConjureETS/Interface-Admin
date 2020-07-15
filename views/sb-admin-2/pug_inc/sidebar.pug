@@ -1,0 +1,15 @@
+//- sidebar.pug
+
+ul#accordionSidebar(class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion")
+
+    +sidebar_brand("SGA", "/")
+
+    +sidebar_divider_my0
+
+    block sidebar_menu_buttons
+
+    +sidebar_divider
+
+    +sidebar_toggler
+
+</ul>

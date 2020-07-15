@@ -1,0 +1,29 @@
+//- blank.pug
+include pug_inc/mixins/mixins
+include pug_inc/mixins/cards
+include pug_inc/mixins/buttons
+include ../mixins
+
+doctype html
+
+html
+    head
+        include pug_inc/meta
+        include pug_inc/link
+
+        include pug_inc/ga_tracking
+
+    body#page-top
+        #wrapper
+            block sidebar
+                include pug_inc/sidebar
+
+            #content-wrapper(class="d-flex flex-column")
+                include pug_inc/content
+                include pug_inc/footer
+
+        +scroll_to_top_btn
+
+        include pug_inc/logout_modal
+
+        include pug_inc/scripts
