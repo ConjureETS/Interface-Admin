@@ -5,18 +5,22 @@
 	"scripts": {
 		"start": "node dist/server.js",
 		"test": "mocha --reporter spec --require ts-node/register 'test/**/*.ts' --exit",
-		"build": "tsc",
+		"build": "tsc --project tsconfig.json",
 		"coverage": "nyc npm run test",
 		"coverage:coveralls": "nyc --reporter=lcov --reporter=text-lcov npm run test | coveralls",
 		"build-start": "npm run build && npm start"
 	},
 	"license": "ISC",
 	"dependencies": {
+		"@natlibfi/passport-atlassian-crowd": "^2.0.3",
 		"@types/node": "^14.0.23",
 		"chai": "^4.2.0",
+		"cookie-parser": "^1.4.5",
 		"express": "^4.17.1",
+		"express-session": "^1.17.1",
 		"mocha": "^8.0.1",
 		"morgan": "^1.10.0",
+		"passport": "^0.4.1",
 		"pug": "^3.0.0",
 		"pug-bootstrap": "0.0.16",
 		"startbootstrap-sb-admin-2": "^4.1.1",

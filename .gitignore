@@ -2,5 +2,6 @@ vendor/
 node_modules/
 npm-debug.log
 
-.idea/
+
+**/config.json
 dist/

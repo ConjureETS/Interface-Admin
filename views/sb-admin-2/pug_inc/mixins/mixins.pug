@@ -16,10 +16,10 @@ mixin tick_box(text)
         label(class="custom-control-label" for="customCheck")= text
 
 mixin username_textbox(text_placeholder)
-    input(type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder!= text_placeholder name="username" required)
+    input(type="text" class="form-control form-control-user" id="usernameInput" aria-describedby="emailHelp" placeholder!= text_placeholder name="username" required)
 
 mixin password_textbox(text_placeholder)
-    input(type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder!= text_placeholder name="password" required)
+    input(type="password" class="form-control form-control-user" id="passwordInput" placeholder!= text_placeholder name="password" required)
 
 mixin login_btn(login_text, login_href)
     a(href!= login_href class="btn btn-primary btn-user btn-block")= login_text
@@ -218,24 +218,25 @@ mixin login_card_body
                 div(class="text-center")
                     h1(class="h4 text-gray-900 mb-4") Welcome Back!
 
-                form.user(action="/", method="post")
+                form.user
                     .form-group
-                        +username_textbox("Enter Email Address...")
+                        +username_textbox("Username")
 
                     .form-group
                         +password_textbox("Password")
 
-                    //.form-group
-                    //    +tick_box("Remember Me")
+                    //-.form-group
+                    //-    +tick_box("Remember Me")
 
-                    +login_submit_btn("Login", "/")
+                    //-+login_submit_btn("Login", "/")
+                    button.btn.btn-primary.btn-user.btn-block(type='button') Login
 
-                    //+social_login_btn("fa-google","Login with Google","index.html")
-                    //+social_login_btn("fa-facebook-f","Login with Facebook","index.html")
+                    //-+social_login_btn("fa-google","Login with Google","index.html")
+                    //-+social_login_btn("fa-facebook-f","Login with Facebook","index.html")
 
-                //<hr>
-                //+link_btn("Forgot Password?","forgot-password.html")
-                //+link_btn("Create an Account!","register.html")
+                //-<hr>
+                //-+link_btn("Forgot Password?","forgot-password.html")
+                //-+link_btn("Create an Account!","register.html")
 
 mixin register_google_btn
     a(href="index.html" class="btn btn-google btn-user btn-block")
